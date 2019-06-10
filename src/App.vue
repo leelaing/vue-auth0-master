@@ -30,13 +30,9 @@
     </v-toolbar>
     <v-navigation-drawer app v-model="left_drawer">
       <v-list class="pa-1">
-        <v-list-tile avatar>
-          <v-list-tile-avatar>
-            <img src="https://randomuser.me/api/portraits/men/85.jpg">
-          </v-list-tile-avatar>
-
+        <v-list-tile>
           <v-list-tile-content>
-            <v-list-tile-title>John Leider</v-list-tile-title>
+            <v-list-tile-title>Main Menu</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -44,7 +40,7 @@
       <v-list class="pt-0" dense>
         <v-divider></v-divider>
 
-        <v-list-tile v-for="item in items" :key="item.title">
+        <v-list-tile v-for="item in left_items" :key="item.title">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -56,7 +52,28 @@
       </v-list>
     </v-navigation-drawer>
     <!--  -->
-    <v-navigation-drawer app right v-model="right_drawer">Right Drawer</v-navigation-drawer>
+    <v-navigation-drawer app right v-model="right_drawer">
+      <v-list class="pa-1">
+        <v-list-tile>
+          <v-list-tile-content>
+            <v-list-tile-title>Secondary Menu</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+      <v-list class="pt-0" dense>
+        <v-divider></v-divider>
+
+        <v-list-tile v-for="item in right_items" :key="item.title">
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+
+          <v-list-tile-content>
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
 
     <v-content>
       <router-view></router-view>
@@ -73,9 +90,13 @@ export default {
       clientId: process.env.VUE_APP_AUTH0_CONFIG_DOMAIN,
       left_drawer: false,
       right_drawer: false,
-      items: [
+      left_items: [
         { title: "Home", icon: "dashboard" },
         { title: "About", icon: "question_answer" }
+      ],
+      right_items: [
+        { title: "open", icon: "open" },
+        { title: "open", icon: "open" }
       ]
     };
   },

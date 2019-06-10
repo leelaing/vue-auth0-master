@@ -8,8 +8,6 @@ const app = express()
 app.use(bodyParser.json())
 
 // Import Routes
-// const postRoute = require('./routes/old-posts')
-// const userRoute = require('./routes/old-users')
 const todoRoute = require('./routes/todos')
 
 app.use('/api/todos', todoRoute)
