@@ -23,7 +23,10 @@
       <v-btn flat @click="logout" v-if="this.$store.state.userIsAuthorized">
         <v-icon class="fas fa-sign-out-alt"></v-icon>
       </v-btn>
-      <v-toolbar-side-icon @click="right_drawer = !right_drawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon
+        v-if="this.$store.state.userIsAuthorized"
+        @click="right_drawer = !right_drawer"
+      ></v-toolbar-side-icon>
     </v-toolbar>
     <v-navigation-drawer app v-model="left_drawer">Left Drawer</v-navigation-drawer>
     <v-navigation-drawer app right v-model="right_drawer">Right Drawer</v-navigation-drawer>

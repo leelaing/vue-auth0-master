@@ -19,7 +19,9 @@
               </div>
             </v-card-title>
             <v-card-actions>
-              <v-btn @click="auth0Login()">Login</v-btn>
+              <v-btn @click="auth0Login()">
+                <v-icon left class="fas fa-sign-in-alt"></v-icon>Login
+              </v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
