@@ -12,9 +12,9 @@
                 <div>
                   Welcome to Big2Tiny.com.
                   <br>
-                  <br>Login to connect.
+                  <br>Login to connect to the members content.
                   <br>
-                  <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  <br>
                 </div>
               </div>
             </v-card-title>
@@ -41,7 +41,7 @@ export default {
   }
 };
 </script>
-<style>
+<style lang="scss">
 .center {
   text-align: center;
 }
